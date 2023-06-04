@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin responsive($breakpoint){
+    @if $breakpoint == Forfold{
+        @media only screen and (max-width:280px){
+            @content
+        };
+    }
+    @if $breakpoint == Exsmall330{
+        @media only screen and (max-width:330px){
+            @content
+        };
+    }
+    @if $breakpoint == Exsmall355{
+        @media only screen and (max-width:355px){
+            @content
+        };
+    }
+    @if $breakpoint == Exsmall394{
+        @media only screen and (max-width:394px){
+            @content
+        };
+    }
+  @if $breakpoint == Exsmall{
+      @media only screen and (max-width:474px){
+          @content
+      };
+  }
+  @if $breakpoint == phone{
+      @media only screen and (max-width:768px){
+          @content
+      };
+  }
+  @if $breakpoint == tab-port{
+      @media only screen and (max-width:992px){
+          @content
+      };
+  }
+  @if $breakpoint == tab-port-min{
+    @media only screen and (min-width:992px){
+        @content
+    };
+}
+  @if $breakpoint == tab-port-1024{
+      @media only screen and (max-width:1024px){
+          @content
+      };
+  }
+  @if $breakpoint == device1200{
+      @media only screen and (min-width:1200px){
+          @content
+      };
+  }
+  @if $breakpoint == device1200Max{
+      @media only screen and (max-width:1200px){
+          @content
+      };
+  }
+  @if $breakpoint == tab-land{
+      @media only screen and (max-width:1400px){
+          @content
+      };
+  }
+  @if $breakpoint == big-desktop{
+      @media only screen and (min-width:1800px){
+          @content
+      };
+  }
+}
+.gq_head{
+    background: #F6E6CA 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    h2{
+        color: #FF7607;
+    }
+    span{
+        &.closeBtn{
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #D6BE91 0% 0% no-repeat padding-box;
+            border-radius: 50%;
+            svg{
+                fill:#fff;
+            }
+        }
+    }
+}
+
+.form-group {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  .form-group input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+
+  .form-group label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .form-group label:before {
+    content: "";
+    -webkit-appearance: none;
+    background-color: #FF7607;
+    border: 2px solid #FF7607;
+    box-shadow: 0 1px 2px rgb(208 74 74 / 0%), inset 0px -15px 10px -12px rgb(201 201 201 / 0%);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+
+  .form-group input:checked + label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 6px;
+    height: 13px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .box_row{
+    border: 4px solid #c4ab7e57;
+    border-radius: 10px;
+    margin: 0;
+    margin-top: 15px;
+    padding: 10px;
+    padding-bottom: 15px;
+    .box_row_col{
+        @include responsive(phone){
+            padding: 0;
+            padding-bottom: 10px;
+        }
+    }
+    .form_field{
+        margin: 0;
+    }
+  }
+  .submit_quote{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 0;
+    button{
+        background: #FF7607 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        border: none;
+        padding: 5px 40px;
+        color: #fff;
+    }
+  }
+  .banner{
+    height: auto !important;
+  }
+  .banner .banner_in .col_bnr_lft{
+    padding-right: 0;
+    padding: 100px 15px;
+  }

@@ -1,0 +1,39 @@
+<div class="card1">
+  <div style="text-align: center;">
+    <h1 style="color: aliceblue;">Create User Story </h1>
+  </div>
+  <div class="dashboard">
+    <div>
+      <form [formGroup]="formGroup">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Task</mat-label>
+            <input matInput name="task" required formControlName="story">
+            <mat-error *ngIf="formGroup.controls['story'].invalid">Task is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row" style="width:700px">
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput name="description" required formControlName="description"></textarea>
+            <mat-error *ngIf="formGroup.controls['description'].invalid">Description is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row" style="width:700px">
+          <mat-form-field appearance="outline">
+            <mat-label>Points</mat-label>
+            <input type="number" matInput name="points" required formControlName="points" min="1">
+            <mat-error *ngIf="formGroup.controls['points'].invalid">Points is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="example-button-row">
+          <button mat-raised-button routerLink="/">cancel</button>
+          <button mat-raised-button color="accent" (click)="saveTask()">Save</button>
+        </div>
+
+      </form>
+    </div>
+  </div>

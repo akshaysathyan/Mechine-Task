@@ -1,0 +1,214 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tc-new-primary: mat.define-palette(mat.$indigo-palette);
+$tc-new-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tc-new-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$tc-new-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $tc-new-primary,
+      accent: $tc-new-accent,
+      warn: $tc-new-warn,
+    ),
+  )
+);
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($tc-new-theme);
+
+@import "assets/style/theme";
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* You can add global styles to this file, and also import other style files */
+@mixin responsive($breakpoint) {
+  @if $breakpoint == Forfold {
+    @media only screen and (max-width: 280px) {
+      @content;
+    }
+  }
+  @if $breakpoint == Exsmall330 {
+    @media only screen and (max-width: 330px) {
+      @content;
+    }
+  }
+  @if $breakpoint == Exsmall355 {
+    @media only screen and (max-width: 355px) {
+      @content;
+    }
+  }
+  @if $breakpoint == Exsmall394 {
+    @media only screen and (max-width: 394px) {
+      @content;
+    }
+  }
+  @if $breakpoint == Exsmall {
+    @media only screen and (max-width: 474px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port-min {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port-1024 {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == device1200 {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == device1200Max {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 1400px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 50px;
+}
+.owl-theme .owl-dots .owl-dot span {
+  background: #ff7607 !important;
+  opacity: 0.55;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #ff7607 !important;
+  opacity: 1;
+}
+.mob_menu {
+  width: 400px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 99999;
+  background-color: #000000b5;
+  right: -100%;
+  transition: all 0.5s;
+  @include responsive(phone) {
+    width: 100%;
+  }
+  .closeMenu {
+    z-index: 999;
+    position: relative;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px;
+    span {
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+  &.menuClass {
+    width: 400px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 99999;
+    background-color: #000000b5;
+    transition: all 0.5s;
+    backdrop-filter: blur(5px);
+    @include responsive(phone) {
+      width: 100%;
+    }
+  }
+  .phone {
+    padding-top: 50px;
+    ul {
+      list-style: none;
+      padding-left: 10px;
+      li {
+        padding-bottom: 15px;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// .mat-snack-bar-container {
+//   background-color: rgb(255, 123, 0) !important;
+//   color: #000;
+// }
+
+// ::ng-deep .mat-snack-bar button {
+//   color:black !important;
+// }
+
+
+span#docs-internal-guid-c433c8b4-7fff-897e-4685-6daa2886dce9 p{
+margin-left: 0 !important;
+}
+
+::ng-deep .mat-button-wrapper{
+  color: black !important;
+}
+
+.mat-simple-snackbar-action {
+    color: #000000 !important;
+}

@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Are You Sure</h2>
+<mat-dialog-content>
+
+  <p>{{ data }}</p> <!-- Accessing the passed data -->
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button mat-raised-button color="accent" [mat-dialog-close]="true">Delete</button>
+
+</mat-dialog-actions>

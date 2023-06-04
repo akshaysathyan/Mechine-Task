@@ -1,0 +1,45 @@
+<div class="card1">
+  <div style="text-align: center;">
+    <h1 style="color: aliceblue;">Create New Sprint </h1>
+  </div>
+  <div class="dashboard">
+    <div>
+      <form [formGroup]="formGroup">
+        <div class="row" style="width:700px">
+          <mat-form-field appearance="outline">
+            <mat-label>Sprint Title</mat-label>
+            <input type="text" matInput name="title" required formControlName="title" min="1">
+            <mat-error *ngIf="formGroup.controls['points'].invalid">title is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row" style="width:700px">
+          <mat-form-field appearance="outline">
+            <mat-label>Target Total Points</mat-label>
+            <input type="number" matInput name="points" required formControlName="points" min="1">
+            <mat-error *ngIf="formGroup.controls['points'].invalid">Points is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Story</mat-label>
+            <mat-select placeholder="Select Story" [ngModel]="selectedValues" formControlName="stories" multiple
+              (selectionChange)="taskselect($event)">
+              <mat-option *ngFor="let item of data" [value]="item">
+                {{ item.story }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formGroup.controls['stories'].invalid">Story is required</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div class="example-button-row">
+          <button mat-raised-button routerLink="/sprint-planner/list">cancel</button>
+          <button mat-raised-button color="accent" (click)="saveTask()">Save</button>
+        </div>
+
+      </form>
+    </div>
+  </div>

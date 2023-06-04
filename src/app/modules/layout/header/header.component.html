@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navBar_out" [class.header_change]="header_variable">
+  <div class="container">
+    <div class="nav_in">
+      <a class="navbar-brand" href="#"><img
+          src="https://www.366icons.com/media/01/profile-avatar-account-icon-16699.png" alt=""
+          style="height: 55px;" /></a>
+      <!-- <a class="navbar-brand" href="#"><img src="../../../../assets/images/main-logo.png" alt="" style="height: 50px;" /></a> -->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="openMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse rightNav" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer" aria-current="page" routerLink="/">Dashboard</a>
+          </li>
+          <li class="nav-item active cursor-pointer">
+            <a class="nav-link contactUrl" routerLink="/create-story">Add Story </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer" aria-current="page" routerLink="/story">Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer" aria-current="page" routerLink="/sprint-planner">Sprint Planner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer" aria-current="page" routerLink="/sprint-planner/list">Sprint Dashboard
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mob_menu" [class.menuClass]="menuVariable">
+  <div class="closeMenu" (click)="closeMenu()">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M6.22566 4.81096C5.83514 4.42044 5.20197 4.42044 4.81145 4.81096C4.42092 5.20148 4.42092 5.83465 4.81145 6.22517L10.5862 11.9999L4.81151 17.7746C4.42098 18.1651 4.42098 18.7983 4.81151 19.1888C5.20203 19.5793 5.8352 19.5793 6.22572 19.1888L12.0004 13.4141L17.7751 19.1888C18.1656 19.5793 18.7988 19.5793 19.1893 19.1888C19.5798 18.7983 19.5798 18.1651 19.1893 17.7746L13.4146 11.9999L19.1893 6.22517C19.5799 5.83465 19.5799 5.20148 19.1893 4.81096C18.7988 4.42044 18.1657 4.42044 17.7751 4.81096L12.0004 10.5857L6.22566 4.81096Z"
+          fill="black" />
+      </svg>
+    </span>
+  </div>
+  <div class="phone">
+    <div class="content">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <ul id="menu">
+
+            <li><a (click)="closeMenu()" routerLink="/">Dashboard</a></li>
+            <li><a (click)="closeMenu()" routerLink="/create-story">Add Story</a></li>
+            <li><a (click)="closeMenu()" routerLink="/story">Story</a></li>
+            <li><a (click)="closeMenu()" routerLink="/sprint-planner">Sprint Planner</a></li>
+            <li><a (click)="closeMenu()" routerLink="/sprint-planner/list">Sprint Dashboard</a></li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
